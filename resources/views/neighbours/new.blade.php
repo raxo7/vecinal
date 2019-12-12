@@ -22,27 +22,27 @@
                     </div>
                     <div class="form-group">
                       <label for="nombres">Nombres</label>
-                      <input type="text" class="form-control form-control-sm" id="nombres" placeholder="Ingrese nombres">
+                      <input name="name" type="text" class="form-control form-control-sm" id="nombres" placeholder="Ingrese nombres">
                     </div>
                     <div class="row">
                       <div class="col">
                         <label for="apellido-paterno">Apellido paterno</label>
-                        <input type="text" class="form-control form-control-sm" id="apellido-paterno" placeholder="Ingrese apellido paterno">
+                        <input name="father_last_name" type="text" class="form-control form-control-sm" id="apellido-paterno" placeholder="Ingrese apellido paterno">
                       </div>
                       <div class="col">
                         <label for="apellido-materno">Apellido materno</label>
-                        <input type="text" class="form-control form-control-sm" id="apellido-materno" placeholder="Ingrese apellido materno">
+                        <input name="mother_last_name" type="text" class="form-control form-control-sm" id="apellido-materno" placeholder="Ingrese apellido materno">
                       </div>
                     </div>
                     <br>
                     <div class="row">
                       <div class="col">
                         <label for="fecha-nacimiento">Fecha de nacimiento</label>
-                        <input type="date" class="form-control form-control-sm" id="fecha-nacimiento">
+                        <input name="birthdate" type="date" class="form-control form-control-sm" id="fecha-nacimiento">
                       </div>
                       <div class="col">
                         <label for="sexo">Sexo</label>
-                        <select class="form-control form-control-sm" id="sexo">
+                        <select name="genre_id" class="form-control form-control-sm" id="sexo">
                             <option disabled>Escoja un sexo</option>
                             @foreach ($genres as $genre)
                                 <option value="{{ $genre->id }}">{{ $genre->type }}</option>
@@ -54,7 +54,7 @@
                     <div class="row">
                       <div class="col">
                         <label for="nacionalidad">Nacionalidad</label>
-                        <select class="form-control form-control-sm" id="nacionalidad">
+                        <select name="nationality_id" class="form-control form-control-sm" id="nacionalidad">
                           <option disabled>Escoja una nacionalidad</option>
                           @foreach ($nationalities as $nacionality)
                               <option value="{{ $nacionality->id }}">{{ $nacionality->name }}</option>
@@ -63,7 +63,7 @@
                       </div>
                       <div class="col">
                         <label for="estado-civil">Estado civil</label>
-                        <select class="form-control form-control-sm" id="estado-civil">
+                        <select name="marital_state_id" class="form-control form-control-sm" id="estado-civil">
                             <option disabled>Escoja un estado civil</option>
                             @foreach ($marital_states as $marital_state)
                                 <option value="{{ $marital_state->id }}">{{ $marital_state->name }}</option>
@@ -76,7 +76,7 @@
                     <div class="row">
                       <div class="col">
                         <label for="ciudad">Ciudad</label>
-                        <select class="form-control form-control-sm" id="Ciudad">
+                        <select name="city_id" class="form-control form-control-sm" id="Ciudad">
                             <option disabled>Escoja una ciudad</option>
                             @foreach ($cities as $city)
                                 <option value="{{ $city->id }}">{{ $city->name }}</option>
@@ -85,7 +85,7 @@
                       </div>
                       <div class="col">
                         <label for="poblacion">Población</label>
-                        <select class="form-control form-control-sm" id="poblacion">
+                        <select name="village_id" class="form-control form-control-sm" id="poblacion">
                             <option disabled>Escoja una población</option>
                             @foreach ($villages as $village)
                                 <option value="{{ $village->id }}">{{ $village->name }}</option>
@@ -97,11 +97,11 @@
                     <div class="row">
                       <div class="col">
                         <label for="calle">Calle</label>
-                        <input type="text" class="form-control form-control-sm" id="calle" placeholder="Ingrese su calle">
+                        <input name="street_name" type="text" class="form-control form-control-sm" id="calle" placeholder="Ingrese su calle">
                       </div>
                       <div class="col">
                         <label for="numero">Número</label>
-                        <input type="text" class="form-control form-control-sm" id="numero" placeholder="Ingrese número">
+                        <input name="street_number" type="text" class="form-control form-control-sm" id="numero" placeholder="Ingrese número">
                       </div>
                     </div>
                     @csrf

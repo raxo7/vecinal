@@ -33,7 +33,7 @@ class NeighbourController extends Controller
             ]
         );
 
-        dd($request->all());
+        // dd($request->all());
 
         return Neighbour::create($request->except('_token'));
     }
