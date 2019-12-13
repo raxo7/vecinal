@@ -46,6 +46,39 @@ class NeighbourController extends Controller
         return Neighbour::create($request->except('_token'));
     }
 
+    public function editForm($id)
+    {
+        return view('neighbours/edit')
+            ->with([
+                'genres' => Genre::all(),
+                'nationalities' => Nationality::all(),
+                'marital_states' => MaritalState::all(),
+                'cities' => City::all(),
+                'villages' => Village::all(),
+                'neighbour' => Neighbour::find($id)
+            ]);
+    }
+
+    public function editNeighbour(Request $request)
+    {
+        // TODO: validar
+        $this->validate(
+            $request, [
+
+            ]
+        );
+
+        $neighbour = Neighbour::find($request->id);
+        $neighbour->update($request->except('_token'));
+
+        return redirect('/vecinos/')->with('edit', sprintf(
+            "%s %s %s",
+            $neighbour->name,
+            $neighbour->father_last_name,
+            $neighbour->mother_last_name
+        ));
+    }
+
     public function deleteConfirm($id)
     {
         return view('neighbours/delete_confirm')

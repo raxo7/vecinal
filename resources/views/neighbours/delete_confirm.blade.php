@@ -1,6 +1,6 @@
 @extends('layouts/application')
 
-@section('title', 'Inicio')
+@section('title', 'Confirmar eliminación')
 
 @section('body')
     <div class="container" id="cont3">

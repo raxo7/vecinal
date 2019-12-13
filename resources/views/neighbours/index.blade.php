@@ -14,9 +14,15 @@
         <hr width="85%"/>
         <section>
             <div class="container">
+                @if (session('edit'))
+                    <div class="alert alert-success">
+                        El/la vecino/a {{ session('delete') }} fue modificado/a correctamente
+                    </div>
+                @endif
+
                 @if (session('delete'))
                     <div class="alert alert-success">
-                        El/la vecino/a {{ session('delete') }} fue eliminado correctamente
+                        El/la vecino/a {{ session('delete') }} fue eliminado/a correctamente
                     </div>
                 @endif
 
@@ -43,7 +49,7 @@
                                 <td>{{ $neighbour->rut }}</td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
-                                        <a class="btn btn-primary">
+                                        <a href="/vecinos/{{ $neighbour->id }}/editar" class="btn btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </a>
                                         <a href="/vecinos/{{ $neighbour->id }}/eliminar" class="btn btn-primary">
