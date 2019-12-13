@@ -16,6 +16,18 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
+                                <a href="/vecinos">
+                                    <p>
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                    </p>
+                                    <p>Listado de vecinos</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
                                 <a href="/vecinos/nuevo">
                                     <p>
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>

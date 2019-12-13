@@ -12,6 +12,14 @@ use Illuminate\Http\Request;
 
 class NeighbourController extends Controller
 {
+    public function index()
+    {
+        return view('neighbours/index')
+            ->with([
+                'neighbours' => Neighbour::all()
+            ]);
+    }
+
     public function createForm()
     {
         return view('neighbours/new')
@@ -36,5 +44,24 @@ class NeighbourController extends Controller
         // dd($request->all());
 
         return Neighbour::create($request->except('_token'));
+    }
+
+    public function deleteConfirm($id)
+    {
+        return view('neighbours/delete_confirm')
+            ->with(['neighbour' => Neighbour::find($id)]);
+    }
+
+    public function deleteNeighbour($id)
+    {
+        $neighbour = Neighbour::find($id);
+        $neighbour->delete();
+
+        return redirect('/vecinos/')->with('delete', sprintf(
+            "%s %s %s",
+            $neighbour->name,
+            $neighbour->father_last_name,
+            $neighbour->mother_last_name
+        ));
     }
 }

@@ -9,13 +9,14 @@
         <div class="src-form">
             <form>
                 <input type="text" placeholder="Search here">
-                <button type="submit"><i class="ion-search"></i></a></button>
+                <button type="submit"><i class="ion-search"></i></button>
             </form>
         </div><!-- src-form -->
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/acerca-de">Acerca de</a></li>
+                <li><a href="/vecinos">Vecinos</a></li>
             </ul>
         </nav><!-- / nav -->
 </header>

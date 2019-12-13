@@ -21,8 +21,11 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::group(['prefix' => 'vecinos'], function() {
+        Route::get('/', 'NeighbourController@index');
         Route::get('/nuevo', 'NeighbourController@createForm');
         Route::post('/nuevo', 'NeighbourController@createNew');
+        Route::get('/{id}/eliminar', 'NeighbourController@deleteConfirm');
+        Route::post('/{id}/eliminar', 'NeighbourController@deleteNeighbour');
     });
 
     /*

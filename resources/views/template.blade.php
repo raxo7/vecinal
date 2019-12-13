@@ -14,7 +14,7 @@
         <section >
             <div class="container">
                 <!-- reemplazar acá -->
-                <h1>Soy el inicio</h1>
+                <h3>Soy el inicio</h3>
                 <!-- hasta acá -->
             </div>
         </section>
