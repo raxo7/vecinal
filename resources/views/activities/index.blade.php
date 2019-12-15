@@ -20,10 +20,16 @@
                     </div>
                 @endif
 
+                @if (session('edit'))
+                    <div class="alert alert-success">
+                        La actividad {{ session('edit') }} fue modificada correctamente
+                    </div>
+                @endif
+
                 <!--
                 @if (session('edit'))
                     <div class="alert alert-success">
-                        El/la vecino/a {{ session('delete') }} fue modificado/a correctamente
+                        El/la vecino/a {{ session('edit') }} fue modificado/a correctamente
                     </div>
                 @endif
 

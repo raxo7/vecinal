@@ -4,11 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\ActivityType;
-use App\Genre;
-use App\Nationality;
-use App\MaritalState;
-use App\City;
-use App\Village;
 use App\Neighbour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -61,18 +56,14 @@ class ActivityController extends Controller
 
     public function editForm($id)
     {
-        return view('neighbours/edit')
+        return view('activities/edit')
             ->with([
-                'genres' => Genre::all(),
-                'nationalities' => Nationality::all(),
-                'marital_states' => MaritalState::all(),
-                'cities' => City::all(),
-                'villages' => Village::all(),
-                'neighbour' => Neighbour::find($id)
+                'types' => ActivityType::all(),
+                'activity' => Activity::find($id)
             ]);
     }
 
-    public function editNeighbour(Request $request)
+    public function editActivity(Request $request)
     {
         // TODO: validar
         $this->validate(
@@ -81,15 +72,10 @@ class ActivityController extends Controller
             ]
         );
 
-        $neighbour = Neighbour::find($request->id);
-        $neighbour->update($request->except('_token'));
+        $activity = Activity::find($request->id);
+        $activity->update($request->except('_token'));
 
-        return redirect('/vecinos/')->with('edit', sprintf(
-            "%s %s %s",
-            $neighbour->name,
-            $neighbour->father_last_name,
-            $neighbour->mother_last_name
-        ));
+        return redirect('/actividades/')->with('edit', $activity->name);
     }
 
     public function deleteConfirm($id)
