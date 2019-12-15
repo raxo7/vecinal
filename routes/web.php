@@ -30,6 +30,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/{id}/eliminar', 'NeighbourController@deleteNeighbour');
     });
 
+    Route::group(['prefix' => 'actividades'], function() {
+        Route::get('/', 'ActivityController@index');
+        Route::get('/nueva', 'ActivityController@createForm');
+        Route::post('/nueva', 'ActivityController@createNew');
+        Route::get('/{id}/editar', 'ActivityController@editForm');
+        Route::post('/{id}/editar', 'ActivityController@editActivity');
+        Route::get('/{id}/eliminar', 'ActivityController@deleteConfirm');
+        Route::post('/{id}/eliminar', 'ActivityController@deleteActivity');
+    });
+
     /*
     Route::get('/miruta', function () {
         return view('mivista');

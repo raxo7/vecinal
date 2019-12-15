@@ -1,6 +1,6 @@
 @extends('layouts/application')
 
-@section('title', 'Nuevo vecino')
+@section('title', 'Nueva actividad')
 
 @section('body')
     <div class="container" id="cont3">
@@ -14,7 +14,7 @@
         <hr width="85%"/>
         <section >
             <div class="container">
-                <h3 id="tit">Agregar vecino</h3>
+                <h3 id="tit">Agregar actividad</h3>
                 <form method="POST" action="/vecinos/nuevo">
                     <div class="form-group">
                       <label for="rut">RUT</label>

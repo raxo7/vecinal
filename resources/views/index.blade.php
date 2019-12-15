@@ -37,6 +37,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/actividades">
+                                    <p>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </p>
+                                    <p>Listado de actividades</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/actividades/nueva">
+                                    <p>
+                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                    </p>
+                                    <p>Añadir actividad</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

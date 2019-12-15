@@ -15,8 +15,13 @@
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/acerca-de">Acerca de</a></li>
+                <!-- TODO: solo admin -->
                 <li><a href="/vecinos">Vecinos</a></li>
+                <li><a href="/actividades">Actividades</a>
+
+                <!-- TODO: solo público -->
+                <li><a href="/noticias">Noticias</a></li>
+                <li><a href="/acerca-de">Acerca de</a></li>
             </ul>
         </nav><!-- / nav -->
 </header>
