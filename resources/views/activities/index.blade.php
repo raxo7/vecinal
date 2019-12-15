@@ -26,19 +26,11 @@
                     </div>
                 @endif
 
-                <!--
-                @if (session('edit'))
-                    <div class="alert alert-success">
-                        El/la vecino/a {{ session('edit') }} fue modificado/a correctamente
-                    </div>
-                @endif
-
                 @if (session('delete'))
                     <div class="alert alert-success">
-                        El/la vecino/a {{ session('delete') }} fue eliminado/a correctamente
+                        La actividad {{ session('delete') }} fue eliminada correctamente
                     </div>
                 @endif
-                    -->
 
                 <h3>Listado de actividades</h3>
                 <!-- TODO: limpiar -->

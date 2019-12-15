@@ -80,20 +80,15 @@ class ActivityController extends Controller
 
     public function deleteConfirm($id)
     {
-        return view('neighbours/delete_confirm')
-            ->with(['neighbour' => Neighbour::find($id)]);
+        return view('activities/delete_confirm')
+            ->with(['activity' => Activity::find($id)]);
     }
 
-    public function deleteNeighbour($id)
+    public function deleteActivity($id)
     {
-        $neighbour = Neighbour::find($id);
-        $neighbour->delete();
+        $activity = Activity::find($id);
+        $activity->delete();
 
-        return redirect('/vecinos/')->with('delete', sprintf(
-            "%s %s %s",
-            $neighbour->name,
-            $neighbour->father_last_name,
-            $neighbour->mother_last_name
-        ));
+        return redirect('/actividades/')->with('delete', $activity->name);
     }
 }

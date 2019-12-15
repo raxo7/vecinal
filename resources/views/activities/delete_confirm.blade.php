@@ -19,8 +19,7 @@
                 <br><br>
 
                 <p>
-                    Se va a eliminar el/la vecino/a {{ $neighbour->name }} {{ $neighbour->father_last_name }}
-                    {{ $neighbour->mother_last_name }}, ¿está seguro que desea continuar?
+                    Se va a eliminar la actividad {{ $activity->name }}, ¿está seguro que desea continuar?
                 </p>
 
                 <!-- TODO: css -->
@@ -28,12 +27,12 @@
 
                 <div class="row">
                     <div class="col-3">
-                        <a href="/vecinos" class="btn btn-outline-primary form-control">
+                        <a href="/actividades" class="btn btn-outline-primary form-control">
                             No
                         </a>
                     </div>
                     <div class="col-3 offset-6">
-                        <form action="/vecinos/{{ $neighbour->id }}/eliminar" method="post">
+                        <form action="/actividades/{{ $activity->id }}/eliminar" method="post">
                             @csrf
                             <button type="submit" class="btn btn-danger form-control">
                                 Si
