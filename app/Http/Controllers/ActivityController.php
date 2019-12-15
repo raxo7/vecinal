@@ -9,14 +9,28 @@ use App\City;
 use App\Village;
 use App\Neighbour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ActivityController extends Controller
 {
     public function index()
     {
+        $activities = DB::table('activities')
+            ->join(
+                'activity_types',
+                'activities.type_id',
+                '=',
+                'activity_types.id'
+            )
+            ->select(
+                'activities.*',
+                'activity_types.name as type_name'
+            )
+            ->get();
+
         return view('activities/index')
             ->with([
-                'activities' => Neighbour::all()
+                'activities' => $activities
             ]);
     }
 
