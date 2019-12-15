@@ -42,7 +42,7 @@
                             <th>Nombre</th>
                             <th>Sub título</th>
                             <th>Tipo</th>
-                            <th>Fecha de creación</th>
+                            <th>Fecha</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>

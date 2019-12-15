@@ -15,7 +15,7 @@
         <section >
             <div class="container">
                 <h3 id="tit">Agregar actividad</h3>
-                <form method="POST" action="/actividades/nueva">
+                <form method="POST" action="/actividades/nueva" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="nombre">Nombre</label>
                       <input name="name" type="text" class="form-control form-control-sm" id="nombre" placeholder="Ingrese nombre">

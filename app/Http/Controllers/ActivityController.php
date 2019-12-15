@@ -7,6 +7,7 @@ use App\ActivityType;
 use App\Neighbour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
@@ -49,7 +50,11 @@ class ActivityController extends Controller
             ]
         );
 
-        Activity::create($request->except('_token'));
+        $path = Storage::disk('public')->put('img/activities', $request->file('image'));
+        $data = $request->except('_token');
+        $data['image'] = $path;
+
+        Activity::create($data);
 
         return redirect('/actividades/')->with('create', true);
     }
