@@ -14,6 +14,12 @@
         <hr width="85%"/>
         <section>
             <div class="container">
+                @if (session('create'))
+                    <div class="alert alert-success">
+                        Vecino/a añadido/a correctamente
+                    </div>
+                @endif
+
                 @if (session('edit'))
                     <div class="alert alert-success">
                         El/la vecino/a {{ session('delete') }} fue modificado/a correctamente

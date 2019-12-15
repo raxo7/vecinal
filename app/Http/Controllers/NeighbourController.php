@@ -41,9 +41,9 @@ class NeighbourController extends Controller
             ]
         );
 
-        // dd($request->all());
+        Neighbour::create($request->except('_token'));
 
-        return Neighbour::create($request->except('_token'));
+        return redirect('/vecinos/')->with('create', true);
     }
 
     public function editForm($id)

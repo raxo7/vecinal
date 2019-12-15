@@ -14,6 +14,12 @@
         <hr width="85%"/>
         <section>
             <div class="container">
+                @if (session('create'))
+                    <div class="alert alert-success">
+                        Actividad añadida correctamente
+                    </div>
+                @endif
+
                 <!--
                 @if (session('edit'))
                     <div class="alert alert-success">
@@ -48,7 +54,7 @@
                                 <td>{{ $activity->name }}</td>
                                 <td>{{ $activity->sub_title }}</td>
                                 <td>{{ $activity->type_name }}</td>
-                                <td>{{ $activity->created_at }}</td>
+                                <td>{{ $activity->activity_date }}</td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
                                         <a href="/actividades/{{ $activity->id }}/editar" class="btn btn-primary">

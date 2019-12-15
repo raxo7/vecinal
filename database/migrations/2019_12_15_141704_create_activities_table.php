@@ -17,6 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('sub_title');
+            $table->dateTime('activity_date')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->bigInteger('type_id')->unsigned();

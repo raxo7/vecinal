@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
+use App\ActivityType;
 use App\Genre;
 use App\Nationality;
 use App\MaritalState;
@@ -26,6 +28,7 @@ class ActivityController extends Controller
                 'activities.*',
                 'activity_types.name as type_name'
             )
+            ->orderBy('activities.created_at', 'asc')
             ->get();
 
         return view('activities/index')
@@ -36,13 +39,9 @@ class ActivityController extends Controller
 
     public function createForm()
     {
-        return view('neighbours/new')
+        return view('activities/new')
             ->with([
-                'genres' => Genre::all(),
-                'nationalities' => Nationality::all(),
-                'marital_states' => MaritalState::all(),
-                'cities' => City::all(),
-                'villages' => Village::all()
+                'types' => ActivityType::all()
             ]);
     }
 
@@ -55,9 +54,9 @@ class ActivityController extends Controller
             ]
         );
 
-        // dd($request->all());
+        Activity::create($request->except('_token'));
 
-        return Neighbour::create($request->except('_token'));
+        return redirect('/actividades/')->with('create', true);
     }
 
     public function editForm($id)
