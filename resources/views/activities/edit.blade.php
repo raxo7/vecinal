@@ -3,7 +3,7 @@
 @section('title', 'Editar actividad')
 
 @section('body')
-    <div class="container" id="cont3">
+    <div class="container" id="activities-edit-container">
         <section class="ptb-0">
             <div class="container">
                 <!-- TODO: añadir breadcrumbs -->

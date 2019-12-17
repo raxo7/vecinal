@@ -3,7 +3,7 @@
 @section('title', 'Vecinos')
 
 @section('body')
-    <div class="container" id="cont3">
+    <div class="container" id="neighbours-index-container">
         <section class="ptb-0">
             <div class="container">
                 <!-- TODO: breadcrumb -->
@@ -32,9 +32,14 @@
                     </div>
                 @endif
 
-                <h3>Listado de vecinos</h3>
-                <!-- TODO: limpiar -->
-                <br><br>
+                <div class="title">
+                    <h3>Listado de vecinos</h3>
+
+                    <a href="/vecinos/nuevo" class="btn btn-primary">
+                        Nuevo
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
 
                 <table class="table">
                     <thead>

@@ -1,25 +1,52 @@
+/**
+ *  Contenedor principal
+ *  Truco para dar estilos a los que contengan la palabra -container en su id
+ */
+body > div[id*=-container] {
+   width: 75%;
+   background-color: #46c89d;
+   border-radius: 0px 0px 35px 35px;
+}
+
 /*
  *  Vista inicio
  */
-#cont3 #dashboard .card p {
+#index-container #dashboard .card p {
     text-align: center;
 }
 
-#cont3 #dashboard .card p i {
+#index-container #dashboard .card p i {
     font-size: 3em;
 }
 
-#cont3 #dashboard .card:hover {
+#index-container #dashboard .card:hover {
     cursor: pointer;
 }
 
-#cont3 #dashboard .card a:hover {
+#index-container #dashboard .card a:hover {
     color: #555555;
 }
 
-#cont3 #dashboard .card .card-body a {
+#index-container #dashboard .card .card-body a {
     width: 100%
 }
+
+/**
+ *  Estilos comunes
+ */
+div.title {
+    height: 2em;
+    margin-bottom: 2em;
+}
+
+div.title h3 {
+    float: left;
+}
+
+div.title a {
+    float: right;
+}
+
 
 
 
@@ -69,12 +96,7 @@ body{ background-image: url(https://i.ibb.co/r243wwf/email-pattern.png);
   border-radius: 0px 0px 35px 35px;
 
 }
-#cont3{
-  width: 75%;
-  background-color: #46c89d;
-  border-radius: 0px 0px 35px 35px;
 
-}
 #cont2{
   background-color: red;
 }

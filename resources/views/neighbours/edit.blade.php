@@ -3,7 +3,7 @@
 @section('title', 'Editar vecino')
 
 @section('body')
-    <div class="container" id="cont3">
+    <div class="container" id="neighbours-edit-container">
         <section class="ptb-0">
             <div class="container">
                 <!-- TODO: añadir breadcrumbs -->

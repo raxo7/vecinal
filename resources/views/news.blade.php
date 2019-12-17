@@ -3,7 +3,7 @@
 @section('title', 'Noticias')
 
 @section('body')
-    <div class="container" id="cont3">
+    <div class="container" id="news-container">
         <section class="ptb-0">
             <div class="container">
                 <a class="mt-10" href="/"><i class="fa fa-home"></i> Inicio<i class="mlr-10 ion-chevron-right"></i></a>
