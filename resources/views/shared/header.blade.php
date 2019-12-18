@@ -15,13 +15,21 @@
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
-                <!-- TODO: solo admin -->
-                <li><a href="/vecinos">Vecinos</a></li>
-                <li><a href="/actividades">Actividades</a>
+                @auth
+                    <li><a href="/vecinos">Vecinos</a></li>
+                    <li><a href="/actividades">Actividades</a>
+                @endauth
 
-                <!-- TODO: solo público -->
-                <li><a href="/noticias">Noticias</a></li>
-                <li><a href="/acerca-de">Acerca de</a></li>
+                @guest
+                    <li><a href="/noticias">Noticias</a></li>
+                    <li><a href="/acerca-de">Acerca de</a></li>
+                @endguest
+                
+                @auth
+                    <li><a href="/logout">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a></li>
+                @endauth
             </ul>
         </nav><!-- / nav -->
 </header>

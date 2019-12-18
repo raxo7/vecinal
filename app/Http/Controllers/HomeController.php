@@ -26,14 +26,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function news()
-    {
-        $activities = Activity::all();
-
-        return view('news')
-            ->with([
-                'activities' => $activities
-            ]);
-    }
 }

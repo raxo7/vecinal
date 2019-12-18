@@ -16,12 +16,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view('index');
     });
 
-    Route::get('/acerca-de', function () {
-        return view('about');
-    });
-
-    Route::get('/noticias', 'HomeController@news');
-
     Route::group(['prefix' => 'vecinos'], function() {
         Route::get('/', 'NeighbourController@index');
         Route::get('/nuevo', 'NeighbourController@createForm');
@@ -48,5 +42,11 @@ Route::group(['middleware' => 'auth'], function () {
     });
     */
 });
+
+Route::get('/acerca-de', function () {
+    return view('about');
+});
+
+Route::get('/noticias', 'PublicController@news');
 
 Auth::routes();
