@@ -24,9 +24,9 @@
                     <li><a href="/noticias">Noticias</a></li>
                     <li><a href="/acerca-de">Acerca de</a></li>
                 @endguest
-                
+
                 @auth
-                    <li><a href="/logout">
+                    <li><a href="{{ route('logout') }}">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                     </a></li>
                 @endauth

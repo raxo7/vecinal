@@ -50,3 +50,4 @@ Route::get('/acerca-de', function () {
 Route::get('/noticias', 'PublicController@news');
 
 Auth::routes();
+Route::get('/logout' , 'Auth\LoginController@logout');
