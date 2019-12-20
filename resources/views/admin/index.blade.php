@@ -1,4 +1,4 @@
-@extends('layouts/application')
+@extends('layouts.application')
 
 @section('title', 'Inicio')
 
@@ -16,7 +16,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/vecinos">
+                                <a href="/admin/vecinos">
                                     <p>
                                         <i class="fa fa-users" aria-hidden="true"></i>
                                     </p>
@@ -28,7 +28,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/vecinos/nuevo">
+                                <a href="/admin/vecinos/nuevo">
                                     <p>
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                                     </p>
@@ -40,7 +40,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/actividades">
+                                <a href="/admin/actividades">
                                     <p>
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                     </p>
@@ -52,7 +52,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/actividades/nueva">
+                                <a href="/admin/actividades/nueva">
                                     <p>
                                         <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                                     </p>

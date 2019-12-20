@@ -16,8 +16,8 @@
             <ul>
                 <li><a href="/">Inicio</a></li>
                 @auth
-                    <li><a href="/vecinos">Vecinos</a></li>
-                    <li><a href="/actividades">Actividades</a>
+                    <li><a href="/admin/vecinos">Vecinos</a></li>
+                    <li><a href="/admin/actividades">Actividades</a>
                 @endauth
 
                 @guest

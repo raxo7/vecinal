@@ -1,4 +1,4 @@
-@extends('layouts/application')
+@extends('layouts.application')
 
 @section('title', 'Confirmar eliminación')
 
@@ -27,12 +27,12 @@
 
                 <div class="row">
                     <div class="col-3">
-                        <a href="/actividades" class="btn btn-outline-primary form-control">
+                        <a href="/admin/actividades" class="btn btn-outline-primary form-control">
                             No
                         </a>
                     </div>
                     <div class="col-3 offset-6">
-                        <form action="/actividades/{{ $activity->id }}/eliminar" method="post">
+                        <form action="/admin/actividades/{{ $activity->id }}/eliminar" method="post">
                             @csrf
                             <button type="submit" class="btn btn-danger form-control">
                                 Si

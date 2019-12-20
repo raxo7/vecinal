@@ -1,4 +1,4 @@
-@extends('layouts/application')
+@extends('layouts.application')
 
 @section('title', 'Actividades')
 
@@ -35,7 +35,7 @@
                 <div class="title">
                     <h3>Listado de actividades</h3>
 
-                    <a href="/actividades/nueva" class="btn btn-primary">
+                    <a href="/admin/actividades/nueva" class="btn btn-primary">
                         Nueva
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </a>
@@ -60,10 +60,10 @@
                                 <td>{{ $activity->activity_date }}</td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
-                                        <a href="/actividades/{{ $activity->id }}/editar" class="btn btn-primary">
+                                        <a href="/admin/actividades/{{ $activity->id }}/editar" class="btn btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </a>
-                                        <a href="/actividades/{{ $activity->id }}/eliminar" class="btn btn-primary">
+                                        <a href="/admin/actividades/{{ $activity->id }}/eliminar" class="btn btn-primary">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                     </div>

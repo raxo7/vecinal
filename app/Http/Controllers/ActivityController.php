@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\ActivityType;
-use App\Neighbour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -27,7 +26,7 @@ class ActivityController extends Controller
             ->orderBy('activities.created_at', 'asc')
             ->get();
 
-        return view('activities/index')
+        return view('admin/activities/index')
             ->with([
                 'activities' => $activities
             ]);
@@ -35,7 +34,7 @@ class ActivityController extends Controller
 
     public function createForm()
     {
-        return view('activities/new')
+        return view('admin/activities/new')
             ->with([
                 'types' => ActivityType::all()
             ]);
@@ -56,12 +55,12 @@ class ActivityController extends Controller
 
         Activity::create($data);
 
-        return redirect('/actividades/')->with('create', true);
+        return redirect('/admin/actividades/')->with('create', true);
     }
 
     public function editForm($id)
     {
-        return view('activities/edit')
+        return view('admin/activities/edit')
             ->with([
                 'types' => ActivityType::all(),
                 'activity' => Activity::find($id)
@@ -80,12 +79,12 @@ class ActivityController extends Controller
         $activity = Activity::find($request->id);
         $activity->update($request->except('_token'));
 
-        return redirect('/actividades/')->with('edit', $activity->name);
+        return redirect('/admin/actividades/')->with('edit', $activity->name);
     }
 
     public function deleteConfirm($id)
     {
-        return view('activities/delete_confirm')
+        return view('admin/activities/delete_confirm')
             ->with(['activity' => Activity::find($id)]);
     }
 
@@ -94,6 +93,6 @@ class ActivityController extends Controller
         $activity = Activity::find($id);
         $activity->delete();
 
-        return redirect('/actividades/')->with('delete', $activity->name);
+        return redirect('/admin/actividades/')->with('delete', $activity->name);
     }
 }

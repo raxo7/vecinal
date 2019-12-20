@@ -1,4 +1,4 @@
-@extends('layouts/application')
+@extends('layouts.application')
 
 @section('title', 'Vecinos')
 
@@ -35,7 +35,7 @@
                 <div class="title">
                     <h3>Listado de vecinos</h3>
 
-                    <a href="/vecinos/nuevo" class="btn btn-primary">
+                    <a href="/admin/vecinos/nuevo" class="btn btn-primary">
                         Nuevo
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </a>
@@ -60,10 +60,10 @@
                                 <td>{{ $neighbour->rut }}</td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
-                                        <a href="/vecinos/{{ $neighbour->id }}/editar" class="btn btn-primary">
+                                        <a href="/admin/vecinos/{{ $neighbour->id }}/editar" class="btn btn-primary">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </a>
-                                        <a href="/vecinos/{{ $neighbour->id }}/eliminar" class="btn btn-primary">
+                                        <a href="/admin/vecinos/{{ $neighbour->id }}/eliminar" class="btn btn-primary">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                     </div>

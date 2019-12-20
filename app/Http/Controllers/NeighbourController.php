@@ -14,7 +14,7 @@ class NeighbourController extends Controller
 {
     public function index()
     {
-        return view('neighbours/index')
+        return view('admin/neighbours/index')
             ->with([
                 'neighbours' => Neighbour::all()
             ]);
@@ -22,7 +22,7 @@ class NeighbourController extends Controller
 
     public function createForm()
     {
-        return view('neighbours/new')
+        return view('admin/neighbours/new')
             ->with([
                 'genres' => Genre::all(),
                 'nationalities' => Nationality::all(),
@@ -43,12 +43,12 @@ class NeighbourController extends Controller
 
         Neighbour::create($request->except('_token'));
 
-        return redirect('/vecinos/')->with('create', true);
+        return redirect('/admin/vecinos/')->with('create', true);
     }
 
     public function editForm($id)
     {
-        return view('neighbours/edit')
+        return view('admin/neighbours/edit')
             ->with([
                 'genres' => Genre::all(),
                 'nationalities' => Nationality::all(),
@@ -71,7 +71,7 @@ class NeighbourController extends Controller
         $neighbour = Neighbour::find($request->id);
         $neighbour->update($request->except('_token'));
 
-        return redirect('/vecinos/')->with('edit', sprintf(
+        return redirect('/admin/vecinos/')->with('edit', sprintf(
             "%s %s %s",
             $neighbour->name,
             $neighbour->father_last_name,
@@ -81,7 +81,7 @@ class NeighbourController extends Controller
 
     public function deleteConfirm($id)
     {
-        return view('neighbours/delete_confirm')
+        return view('admin/neighbours/delete_confirm')
             ->with(['neighbour' => Neighbour::find($id)]);
     }
 
@@ -90,7 +90,7 @@ class NeighbourController extends Controller
         $neighbour = Neighbour::find($id);
         $neighbour->delete();
 
-        return redirect('/vecinos/')->with('delete', sprintf(
+        return redirect('/admin/vecinos/')->with('delete', sprintf(
             "%s %s %s",
             $neighbour->name,
             $neighbour->father_last_name,

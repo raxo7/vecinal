@@ -1,9 +1,9 @@
-@extends('layouts/application')
+@extends('layouts.application')
 
-@section('title', 'Editar actividad')
+@section('title', 'Nueva actividad')
 
 @section('body')
-    <div class="container" id="activities-edit-container">
+    <div class="container" id="activities-new-container">
         <section class="ptb-0">
             <div class="container">
                 <!-- TODO: añadir breadcrumbs -->
@@ -14,18 +14,17 @@
         <hr width="85%"/>
         <section >
             <div class="container">
-                <h3 id="tit">Editar actividad</h3>
-                <form method="POST" action="/actividades/{{ $activity->id }}/editar">
+                <h3 id="tit">Agregar actividad</h3>
+                <form method="POST" action="/admin/actividades/nueva" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input name="name" type="text" class="form-control form-control-sm" id="nombre"
-                               value="{{ $activity->name }}" placeholder="Ingrese nombre">
+                      <label for="nombre">Nombre</label>
+                      <input name="name" type="text" class="form-control form-control-sm" id="nombre" placeholder="Ingrese nombre">
                     </div>
 
                     <div class="form-group">
                         <label for="sub título">Sub título</label>
                         <input name="sub_title" type="text" class="form-control form-control-sm" id="sub título"
-                               value="{{ $activity->sub_title }}" placeholder="Ingrese sub título">
+                               placeholder="Ingrese sub título">
                     </div>
 
                     <div class="form-group">
@@ -33,26 +32,19 @@
                         <select name="type_id" class="form-control form-control-sm" id="tipo">
                             <option disabled>Escoja un tipo</option>
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}"
-                                    @if ($type->id === $activity->type_id)
-                                        selected="selected"
-                                    @endif
-                                >{{ $type->name }}</option>
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="fecha">Fecha</label>
-                        <input name="activity_date" type="datetime-local" class="form-control form-control-sm"
-                               value="{{ $activity->activity_date }}" id="fecha">
+                        <input name="activity_date" type="datetime-local" class="form-control form-control-sm" id="fecha">
                     </div>
 
                     <div class="form-group">
                         <label for="descripción">Descripción</label>
-                        <textarea name="description" id="descripción" class="form-control" placeholder="Ingrese descripción">
-                            {{ $activity->description }}
-                        </textarea>
+                        <textarea name="description" id="descripción" class="form-control" placeholder="Ingrese descripción"></textarea>
                     </div>
 
                     <div class="form-group">
