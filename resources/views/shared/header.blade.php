@@ -4,15 +4,15 @@
         </a>
         <nav>
             <ul>
-                @auth
+                @auth ('admin')
                     <li><a href="/admin/">Inicio</a></li>
                 @endauth
 
-                @guest
-                    <li><a href="/">Inicio</a></li>
+                @auth ('user')
+                    <li><a href="/vecino/">Inicio</a></li>
                 @endguest
 
-                @auth
+                @auth ('admin')
                     <li><a href="/admin/vecinos">Vecinos</a></li>
                     <li><a href="/admin/actividades">Actividades</a>
                 @endauth

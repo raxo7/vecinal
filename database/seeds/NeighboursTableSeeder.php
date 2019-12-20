@@ -23,7 +23,7 @@ class NeighboursTableSeeder extends Seeder
         $marital_states = MaritalState::all();
         $cities = City::all();
         $villages = Village::all();
-        $users = User::where('admin', 0)->get();
+        $users = User::all();
 
         foreach ($users as $user) {
             factory(Neighbour::class)

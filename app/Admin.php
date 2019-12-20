@@ -2,14 +2,16 @@
 
 namespace App;
 
-use App\Scopes\UserScope;
+use App\Scopes\AdminScope;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -47,6 +49,6 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::addGlobalScope(new UserScope);
+        static::addGlobalScope(new AdminScope);
     }
 }
