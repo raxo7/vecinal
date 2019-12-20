@@ -27,6 +27,7 @@ class CreateNeighboursTable extends Migration
             $table->tinyInteger('village_id')->unsigned();
             $table->string('street_name');
             $table->string('street_number');
+            $table->bigInteger('user_id')->unsigned()->unique();
             $table->timestamps();
 
             $table->foreign('genre_id')->references('id')->on('genres');
@@ -34,6 +35,7 @@ class CreateNeighboursTable extends Migration
             $table->foreign('marital_state_id')->references('id')->on('marital_states');
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('village_id')->references('id')->on('villages');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
