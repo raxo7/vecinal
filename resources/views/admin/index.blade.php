@@ -61,6 +61,31 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/admin/boletas">
+                                    <p>
+                                        <i class="fa fa-files-o" aria-hidden="true"></i>
+                                    </p>
+                                    <p>Listado de boletas</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/admin/boletas/nueva">
+                                    <p>
+                                        <i class="fa fa-dollar" aria-hidden="true"></i>
+                                    </p>
+                                    <p>Añadir boleta</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

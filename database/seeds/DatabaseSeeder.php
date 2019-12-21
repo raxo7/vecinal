@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NeighboursTableSeeder::class);
         $this->call(ActivityTypesTableSeeder::class);
         $this->call(ActivitiesTableSeeder::class);
+        $this->call(TicketsTableSeeder::class);
     }
 }

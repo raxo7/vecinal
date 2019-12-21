@@ -13,6 +13,14 @@
                 @endguest
 
                 @auth ('admin')
+                    <li><a href="/admin/boletas">Boletas</a></li>
+                @endguest
+
+                @auth ('user')
+                    <li><a href="/vecino/boletas">Boletas</a></li>
+                @endguest
+
+                @auth ('admin')
                     <li><a href="/admin/vecinos">Vecinos</a></li>
                     <li><a href="/admin/actividades">Actividades</a>
                 @endauth

@@ -39,11 +39,31 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
         Route::get('/{id}/eliminar', 'ActivityController@deleteConfirm');
         Route::post('/{id}/eliminar', 'ActivityController@deleteActivity');
     });
+
+    Route::group(['prefix' => 'boletas'], function() {
+        Route::get('/', 'TicketController@index');
+        Route::get('/nueva', 'TicketController@createForm');
+        Route::post('/nueva', 'TicketController@createNew');
+        Route::get('/{id}/editar', 'TicketController@editForm');
+        Route::post('/{id}/editar', 'TicketController@editTicket');
+        Route::get('/{id}/eliminar', 'TicketController@deleteConfirm');
+        Route::post('/{id}/eliminar', 'TicketController@deleteTicket');
+    });
 });
 
 Route::group(['middleware' => 'auth:user', 'prefix' => 'vecino'], function () {
     Route::get('/', function () {
         return view('neighbours.index');
+    });
+
+    Route::group(['prefix' => 'boletas'], function() {
+        Route::get('/', 'TicketController@index');
+        Route::get('/nueva', 'TicketController@createForm');
+        Route::post('/nueva', 'TicketController@createNew');
+        Route::get('/{id}/editar', 'TicketController@editForm');
+        Route::post('/{id}/editar', 'TicketController@editTicket');
+        Route::get('/{id}/eliminar', 'TicketController@deleteConfirm');
+        Route::post('/{id}/eliminar', 'TicketController@deleteTicket');
     });
 });
 
